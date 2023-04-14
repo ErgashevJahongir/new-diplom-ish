@@ -18,7 +18,7 @@ const LayoutComponent2 = () => {
         <div className='flex items-center justify-center gap-5'>
           <Link
             to=''
-            className='flex items-center justify-center gap-1 font-medium text-sm text-white hover:text-gray-400'
+            className='hidden sm:flex items-center justify-center gap-1 font-medium text-sm text-white hover:text-gray-400'
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'

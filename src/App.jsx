@@ -1,5 +1,10 @@
 import { Route, Routes } from 'react-router-dom'
 import { lazy } from 'react'
+import { RequireAuth } from './hooks/Requaired'
+import SudlanganlikHaqida from './pages/SudlanganlikHaqida'
+import YangiSudHaqida from './pages/YangiSudHaqida'
+import TolovlarniKorish from './pages/TolovlarniKorish'
+import XabarnomalarniKorish from './pages/XabarnomalarniKorish'
 const LayoutComponent = lazy(() => import('./components/Layout'))
 const LayoutComponent2 = lazy(() => import('./components/Layout2'))
 const Page404 = lazy(() => import('./pages/404Page'))
@@ -14,7 +19,38 @@ function App() {
         <Route index element={<Home />} />
       </Route>
       <Route path='/dashboard' element={<LayoutComponent />}>
-        <Route index element={<Home />} />
+        <Route
+          index
+          element={
+            <RequireAuth>
+              <SudlanganlikHaqida />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path='new-court-about'
+          element={
+            <RequireAuth>
+              <YangiSudHaqida />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path='payment'
+          element={
+            <RequireAuth>
+              <TolovlarniKorish />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path='messages'
+          element={
+            <RequireAuth>
+              <XabarnomalarniKorish />
+            </RequireAuth>
+          }
+        />
       </Route>
       <Route path='/sign-in' element={<SignIn />} />
       <Route path='/sign-up' element={<SignUp />} />

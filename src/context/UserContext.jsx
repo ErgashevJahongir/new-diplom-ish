@@ -3,11 +3,11 @@ import { createContext, useState, useEffect } from 'react'
 export const TableContext = createContext()
 
 export const TableProvider = ({ children }) => {
-  const [userName, setUserName] = useState(null)
+  const [userName, setUserName] = useState(JSON.parse(localStorage.getItem('diplom-ish')))
 
   useEffect(() => {
-    if (sessionStorage.getItem('diplom-ish')) {
-      setUserName(sessionStorage.getItem('diplom-ish'))
+    if (localStorage.getItem('diplom-ish')) {
+      setUserName(JSON.parse(localStorage.getItem('diplom-ish')))
     }
   }, [])
 
