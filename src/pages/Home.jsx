@@ -112,23 +112,23 @@ const Home = () => {
             <div className='grid grid-cols-1 gap-6 mt-4 md:grid-cols-2 lg:mt-8 lg:grid-cols-3 lg:max-w-full'>
               {news.map((item) => {
                 return (
-                  <div key={item.id} className='overflow-hidden bg-white rounded shadow'>
+                  <div key={item?.id} className='overflow-hidden bg-white rounded shadow'>
                     <div className='p-5'>
                       <div className='relative'>
                         <a href='#' title='' className='block aspect-w-4 aspect-h-3'>
                           <img
                             className='object-cover w-full h-full'
                             src={
-                              item.img.hashId
-                                ? `https://diplom-ishi-production.up.railway.app/api/file/preview/${item.img.hashId}`
+                              item?.img?.hashId
+                                ? `https://diplom-ishi-production.up.railway.app/api/file/preview/${item?.img?.hashId}`
                                 : 'https://cdn.rareblocks.xyz/collection/celebration/images/blog/2/blog-post-1.jpg'
                             }
-                            alt={item.title}
+                            alt={item?.title}
                           />
                         </a>
                       </div>
                       <span className='block mt-6 text-sm font-semibold tracking-widest text-gray-500 uppercase'>
-                        {moment(item.date).format('LL')}
+                        {moment(item?.date).format('LL')}
                       </span>
                       <p className='mt-5 text-2xl font-semibold'>
                         <a href='#' title='' className='text-black'>
