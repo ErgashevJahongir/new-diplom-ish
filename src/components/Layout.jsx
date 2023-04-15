@@ -1,6 +1,6 @@
 import React from 'react'
 import { Dropdown, Layout, Menu, Space, theme } from 'antd'
-import { Outlet, useNavigate } from 'react-router-dom'
+import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 const { Header, Content, Sider } = Layout
 import logo from '../assets/logo.png'
 import { useUser } from '../hooks/UseUser'
@@ -67,7 +67,7 @@ const items2 = [
     label: "Yangi sud haqida ma'lumot",
   },
   {
-    key: '/messages',
+    key: '/dashboard/messages',
     icon: (
       <svg
         xmlns='http://www.w3.org/2000/svg'
@@ -91,6 +91,7 @@ const items2 = [
 const LayoutComponent = () => {
   const { setUserName, userName } = useUser()
   const navigate = useNavigate()
+  const location = useLocation()
   const {
     token: { colorBgContainer },
   } = theme.useToken()
@@ -124,11 +125,16 @@ const LayoutComponent = () => {
     },
   ]
 
+  const menuChange = (key) => {
+    navigate(key.key)
+  }
+
   return (
     <Layout className='relative'>
       <Header className='header flex justify-between items-center sticky top-0 h-20 z-10 w-full'>
-        <div>
+        <div className='flex items-center text-white gap-3'>
           <img className='w-24' src={logo} alt='logo' />
+          <p className=' w-32 text-md font-bold leading-6'>SUD-EKSPERTIZA AXBOROT PORTALI</p>
         </div>
         <div className='flex items-center justify-center gap-5'>
           <Dropdown
@@ -186,17 +192,20 @@ const LayoutComponent = () => {
         <Sider
           width={300}
           className='h-screen left-0 top-0 bottom-0 overflow-auto'
-          style={{ position: 'fixed', background: colorBgContainer, paddingTop: 85 }}
+          style={{ position: 'fixed', background: colorBgContainer, paddingTop: 80 }}
         >
           <Menu
             mode='inline'
-            defaultSelectedKeys={['/dashboard']}
+            theme='dark'
+            defaultSelectedKeys={location.pathname}
             style={{ height: '100%', borderRight: 0 }}
             items={items2}
+            onClick={menuChange}
+            className='pt-3'
           />
         </Sider>
         <Layout style={{ padding: '0 24px 24px', marginLeft: 300 }}>
-          <Content className='min-h-screen p-5 m-0 mt-5 rounded-lg' style={{ background: colorBgContainer }}>
+          <Content className='m-0 mt-5 rounded-lg' style={{ background: colorBgContainer }}>
             <Outlet />
           </Content>
         </Layout>

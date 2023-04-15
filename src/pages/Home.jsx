@@ -76,7 +76,6 @@ const Home = () => {
     newsGetAll()
       .then((data) => {
         setNews(data)
-        console.log(data)
       })
       .catch((error) => {
         console.error(error)
