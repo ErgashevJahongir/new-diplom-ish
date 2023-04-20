@@ -5,6 +5,7 @@ import SudlanganlikHaqida from './pages/SudlanganlikHaqida'
 import YangiSudHaqida from './pages/YangiSudHaqida'
 import TolovlarniKorish from './pages/TolovlarniKorish'
 import XabarnomalarniKorish from './pages/XabarnomalarniKorish'
+import SingleNews from './pages/SingleNews'
 const LayoutComponent = lazy(() => import('./components/Layout'))
 const LayoutComponent2 = lazy(() => import('./components/Layout2'))
 const Page404 = lazy(() => import('./pages/404Page'))
@@ -17,6 +18,7 @@ function App() {
     <Routes>
       <Route path='/' element={<LayoutComponent2 />}>
         <Route index element={<Home />} />
+        <Route path='new/:newId' element={<SingleNews />} />
       </Route>
       <Route path='/dashboard' element={<LayoutComponent />}>
         <Route

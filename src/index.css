@@ -9,3 +9,25 @@
   margin: 16px 24px 16px 0;
   background: rgba(255, 255, 255, 0.3);
 }
+
+#hero {
+  background-image: url(./assets/hero-bg.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+#sign-up {
+  background-image: url(./assets/Sign-up.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#sign-in {
+  background-image: url(./assets/Login.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}

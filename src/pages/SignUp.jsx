@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { loginRequest, registerRequest } from '../api/axiosInstance'
 import { notification } from 'antd'
 import { useUser } from '../hooks/UseUser'
+import logo from '../assets/logo.png'
 
 const SignUp = () => {
   const {
@@ -47,13 +48,10 @@ const SignUp = () => {
     <div className='min-h-screen bg-gray-100 text-gray-900 flex justify-center'>
       <div className='max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1'>
         <div className='lg:w-1/2 xl:w-5/12 p-6 sm:p-12 pt-12 md:pt-24 lg:pt-16'>
-          <div>
-            <img
-              src='https://storage.googleapis.com/devitary-image-host.appspot.com/15846435184459982716-LogoMakr_7POjrN.png'
-              className='w-32 mx-auto'
-            />
+          <div className=' flex items-center justify-center'>
+            <img className='w-32 mx-auto' src={logo} alt='logo' />
           </div>
-          <div className='mt-12 flex flex-col items-center'>
+          <div className='mt-10 flex flex-col items-center'>
             <h1 className='text-2xl xl:text-3xl font-extrabold'>Ro'yxatdan o'tish</h1>
             <div className='w-full flex-1 mt-8'>
               <div className='mx-auto max-w-xs'>
@@ -116,7 +114,7 @@ const SignUp = () => {
           </div>
         </div>
         <div className='flex-1 bg-indigo-100 text-center hidden lg:flex'>
-          <div className="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat bg-[url('src/assets/Sign-up.svg')]"></div>
+          <div id='sign-up' className='m-12 xl:m-16 w-full'></div>
         </div>
       </div>
     </div>

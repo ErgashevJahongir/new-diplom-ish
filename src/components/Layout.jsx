@@ -130,7 +130,7 @@ const LayoutComponent = () => {
   }
 
   return (
-    <Layout className='relative'>
+    <Layout className='relative bg-white'>
       <Header className='header flex justify-between items-center sticky top-0 h-20 z-10 w-full'>
         <div className='flex items-center text-white gap-3'>
           <img className='w-24' src={logo} alt='logo' />
@@ -205,7 +205,7 @@ const LayoutComponent = () => {
           />
         </Sider>
         <Layout style={{ padding: '0 24px 24px', marginLeft: 300 }}>
-          <Content className='m-0 mt-5 rounded-lg' style={{ background: colorBgContainer }}>
+          <Content className='m-0 mt-5 rounded-lg'>
             <Outlet />
           </Content>
         </Layout>

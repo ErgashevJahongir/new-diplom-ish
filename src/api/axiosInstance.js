@@ -13,6 +13,11 @@ export const newsGetAll = async () => {
   return res.data
 }
 
+export const newGetSingle = async (id) => {
+  const res = await axiosInstance.get(`/news/${id}`)
+  return res.data
+}
+
 export const loginRequest = async (body) => {
   const res = await axiosInstance.post('/user/login', body)
   return res.data
