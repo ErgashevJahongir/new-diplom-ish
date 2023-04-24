@@ -17,7 +17,7 @@ const SignIn = () => {
   const onSubmit = (data) => {
     loginRequest(data).then((qism) => {
       if (qism.success) {
-        localStorage.setItem('diplom-ish', JSON.stringify(qism.data))
+        sessionStorage.setItem('diplom-ish', JSON.stringify(qism.data))
         setUserName(qism.data)
         navigate('/dashboard')
       } else {

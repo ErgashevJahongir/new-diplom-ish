@@ -24,7 +24,7 @@ const SignUp = () => {
           })
           loginRequest({ username: data.username, password: data.password })
             .then((son) => {
-              son.success && localStorage.setItem('diplom-ish', JSON.stringify(son.data))
+              son.success && sessionStorage.setItem('diplom-ish', JSON.stringify(son.data))
               son.success && setUserName(son.data)
               son.success && navigate('/dashboard')
             })

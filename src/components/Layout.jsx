@@ -116,7 +116,7 @@ const LayoutComponent = () => {
           onClick={() => {
             navigate('/')
             setUserName(null)
-            localStorage.clear()
+            sessionStorage.clear()
           }}
         >
           Chiqish

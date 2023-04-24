@@ -29,7 +29,7 @@ const LayoutComponent2 = () => {
           onClick={() => {
             navigate('/')
             setUserName(null)
-            localStorage.clear()
+            sessionStorage.clear()
           }}
         >
           Chiqish
