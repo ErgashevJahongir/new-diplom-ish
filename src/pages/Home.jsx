@@ -205,15 +205,6 @@ const Home = () => {
             prevEl: navigationPrevRef.current,
             nextEl: navigationNextRef.current,
           }}
-          onSwiper={(swiper) => {
-            setTimeout(() => {
-              swiper.params.navigation.prevEl = navigationPrevRef.current
-              swiper.params.navigation.nextEl = navigationNextRef.current
-              swiper.navigation.destroy()
-              swiper.navigation.init()
-              swiper.navigation.update()
-            })
-          }}
         >
           <div className='flex items-end justify-between mb-10 w-full  '>
             <div className='flex-1 lg:text-left'>
