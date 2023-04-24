@@ -120,7 +120,7 @@ const Home = () => {
               </div>
             </div>
             <div className='grid grid-cols-1 gap-6 mt-4 md:grid-cols-2 lg:mt-8 lg:grid-cols-3 lg:max-w-full'>
-              {news.map((item) => {
+              {news?.map((item) => {
                 return (
                   <div key={item?.id} className='overflow-hidden bg-white rounded shadow'>
                     <div className='p-5'>
