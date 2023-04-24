@@ -4,6 +4,7 @@ import { loginRequest } from '../api/axiosInstance'
 import { notification } from 'antd'
 import { useUser } from '../hooks/UseUser'
 import logo from '../assets/logo.png'
+import { useEffect } from 'react'
 
 const SignIn = () => {
   const {
@@ -12,7 +13,7 @@ const SignIn = () => {
     formState: { errors },
   } = useForm()
   const navigate = useNavigate()
-  const { setUserName } = useUser()
+  const { setUserName, userName } = useUser()
 
   const onSubmit = (data) => {
     loginRequest(data).then((qism) => {
@@ -28,6 +29,10 @@ const SignIn = () => {
       }
     })
   }
+
+  useEffect(() => {
+    userName && navigate('/')
+  }, [])
 
   return (
     <div className='min-h-screen bg-gray-100 text-gray-900 flex justify-center'>

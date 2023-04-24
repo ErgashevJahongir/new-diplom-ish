@@ -4,6 +4,7 @@ import { loginRequest, registerRequest } from '../api/axiosInstance'
 import { notification } from 'antd'
 import { useUser } from '../hooks/UseUser'
 import logo from '../assets/logo.png'
+import { useEffect } from 'react'
 
 const SignUp = () => {
   const {
@@ -13,7 +14,7 @@ const SignUp = () => {
     formState: { errors },
   } = useForm()
   const navigate = useNavigate()
-  const { setUserName } = useUser()
+  const { setUserName, userName } = useUser()
 
   const onSubmit = (data) => {
     registerRequest({ password: data.password, username: data.username, fullName: data.fullName })
@@ -43,6 +44,10 @@ const SignUp = () => {
         console.error(error)
       })
   }
+
+  useEffect(() => {
+    userName && navigate('/')
+  }, [])
 
   return (
     <div className='min-h-screen bg-gray-100 text-gray-900 flex justify-center'>
