@@ -89,7 +89,7 @@ const Home = () => {
   }, [])
 
   const navigateLogin = () => {
-    navigate('/login')
+    navigate('/sign-in')
   }
 
   return (
