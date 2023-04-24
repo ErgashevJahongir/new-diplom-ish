@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ReactHtmlParser from 'react-html-parser'
 import { newGetSingle } from '../api/axiosInstance'
+import moment from 'moment'
 
 const SingleNews = () => {
   const [newsData, setNewsData] = useState()
@@ -25,11 +26,7 @@ const SingleNews = () => {
           style={{ backgroundImage: 'linear-gradient(180deg,transparent,rgba(0,0,0,.7))' }}
         ></div>
         <img
-          src={
-            newsData?.imgUrl
-              ? newsData.imgUrl
-              : 'https://cdn.rareblocks.xyz/collection/celebration/images/blog/2/blog-post-1.jpg'
-          }
+          src={newsData?.imgUrl ? newsData.imgUrl : ''}
           className='absolute left-0 top-0 w-full h-full z-0 object-cover'
         />
         <div className='p-4 absolute bottom-0 left-0 z-20'>
