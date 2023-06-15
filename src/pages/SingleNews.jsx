@@ -33,7 +33,7 @@ const SingleNews = () => {
           <h2 className='text-4xl font-semibold text-gray-100 leading-tight'>{newsData?.title}</h2>
           <div className='flex mt-3'>
             <div>
-              <p className='font-semibold text-gray-200 text-sm'> Baxtiyor Ergashev </p>
+              <p className='font-semibold text-gray-200 text-sm'> Mahmudov Jayhun </p>
               <p className='font-semibold text-gray-400 text-xs'>
                 {' '}
                 {newsData?.date && moment(newsData?.date).format('LL')}{' '}

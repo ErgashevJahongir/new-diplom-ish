@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const REACT_APP_BASE_URL = 'https://diplom-ishi-production-1234.up.railway.app/api'
+const REACT_APP_BASE_URL = 'https://diplomish-production.up.railway.app/api'
 
 const axiosInstance = axios.create({
   baseURL: REACT_APP_BASE_URL,

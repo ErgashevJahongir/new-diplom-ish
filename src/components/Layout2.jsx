@@ -307,7 +307,7 @@ const LayoutComponent2 = () => {
                   className='inline-block ml-2 text-teal-600 underline transition hover:text-teal-600/75'
                   href='https://t.me/ergashevbaxtiyor0705'
                 >
-                  Bakhtiyor
+                  Mahmudov Jayhun
                 </a>
               </p>
 
